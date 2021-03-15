@@ -1,8 +1,13 @@
+# Importing Library 
 library(readr)
+
+# Importing the Data
 Liver_Data <- read_csv("C:\\Users\\Shaikh Nawaj\\Desktop\\project\\Indian Liver Patient Dataset.csv")
 View(Liver_Data)
 
-Liver_Data["Class"] <- ifelse(Liver_Data$Dataset == 2,"not_patient","patient")
+# Data Preprocessing
+
+Liver_Data["Class"] <- ifelse(Liver_Data$is_patient == 2,"not_patient","patient")
 # 1 is patient
 # 0 is not patient
 Liver_Data["female"] <- ifelse(Liver_Data$Gender == "Female",1,0)
